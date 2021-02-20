@@ -3,13 +3,13 @@
 # 或者运行目录下的config.yml
 #---------------------------------------------------#
 # 混合端口 HTTP和SOCKS5用一个端口
-mixed-port: 7890
+mixed-port: 10808
 
 # HTTP 代理端口
 # port: 7890
 
 # SOCKS5 代理端口
-socks-port: 7891
+socks-port: 10809
 
 # Linux 和 macOS 的 redir 代理端口 (如需使用此功能，请取消注释)
 # redir-port: 7892
@@ -159,9 +159,9 @@ cfw-latency-url: http://www.gstatic.com/generate_204
 # Options for profile: true, false
 # Options for mode: true, false
 cfw-conn-break-strategy:
-  proxy: none # none/chain/all
+  proxy: all # none/chain/all
   profile: true # true/false
-  mode: false # true/false
+  mode: true # true/false
 
 # 自定义状态栏图标
 #cfw-tray-icon:
@@ -169,7 +169,7 @@ cfw-conn-break-strategy:
 #system-proxy-on: .\resources\static\imgs\custom.ico   # 开启系统代理后图标
 
 # 自定义字体
-#cfw-font-family: "Noto Sans TC"   # 系统中存在的字体
+#cfw-font-family: "圆体-简"   # 系统中存在的字体
 
 # 自定义请求头
 #cfw-http-headers:
