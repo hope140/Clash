@@ -70,4 +70,4 @@ custom_proxy_group=🎲 游戏节点`select`(IPLC|IEPL|专线|BGP)
 enable_rule_generator=true
 overwrite_original_rules=true
 
-clash_rule_base=https://raw.githubusercontent.com/hope140/Clash/main/GeneralClashConfig.yml
+;clash_rule_base=https://raw.githubusercontent.com/hope140/Clash/main/GeneralClashConfig.yml
