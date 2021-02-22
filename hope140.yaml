@@ -26,12 +26,12 @@ ruleset=📺 哔哩哔哩,https://raw.githubusercontent.com/ACL4SSR/ACL4SSR/mast
 ruleset=🌏 国内媒体,https://raw.githubusercontent.com/ACL4SSR/ACL4SSR/master/Clash/ChinaMedia.list
 ruleset=🌍 国外媒体,https://raw.githubusercontent.com/ACL4SSR/ACL4SSR/master/Clash/ProxyMedia.list
 ruleset=✈️ 节点选择,https://raw.githubusercontent.com/ACL4SSR/ACL4SSR/master/Clash/ProxyGFWlist.list
-ruleset=✈️ 节点选择,https://raw.githubusercontent.com/hope140/Clash/main/Proxy.list
+ruleset=✈️ 节点选择,https://raw.githubusercontent.com/hope140/Clash/beta/Proxy.list
 ruleset=🎯 全球直连,https://raw.githubusercontent.com/ACL4SSR/ACL4SSR/master/Clash/ChinaIp.list
 ruleset=🎯 全球直连,https://raw.githubusercontent.com/ACL4SSR/ACL4SSR/master/Clash/ChinaDomain.list
 ruleset=🎯 全球直连,https://raw.githubusercontent.com/ACL4SSR/ACL4SSR/master/Clash/ChinaCompanyIp.list
 ruleset=🎯 全球直连,https://raw.githubusercontent.com/ACL4SSR/ACL4SSR/master/Clash/Download.list
-ruleset=🎯 全球直连,https://raw.githubusercontent.com/hope140/Clash/main/Direct.list
+ruleset=🎯 全球直连,https://raw.githubusercontent.com/hope140/Clash/beta/Direct.list
 ruleset=🎯 全球直连,[]GEOIP,CN
 ruleset=🐟 漏网之鱼,[]FINAL
 ;设置规则标志位
@@ -72,4 +72,4 @@ custom_proxy_group=🎲 游戏节点`select`(IPLC|IEPL|专线|BGP)
 enable_rule_generator=true
 overwrite_original_rules=true
 
-;clash_rule_base=https://raw.githubusercontent.com/hope140/Clash/main/GeneralClashConfig.yml
+;clash_rule_base=https://raw.githubusercontent.com/hope140/Clash/beta/GeneralClashConfig.yml
