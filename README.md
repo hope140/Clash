@@ -1,2 +1,2 @@
 # Clash
-clash配置文件，基于ACL4SSR修改自用
+clash配置文件，基于ACL4SSR修改
