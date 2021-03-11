@@ -1,0 +1,5 @@
+# Hope's DirectList
+payload:
+  - DOMAIN-KEYWORD,v6
+  - DOMAIN-KEYWORD,euserv
+  - DOMAIN-SUFFIX,api.hope140.live

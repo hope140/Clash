@@ -1,0 +1,13 @@
+# Hope's ProxyList
+payload:
+  - DOMAIN-KEYWORD,jetbrains
+  - DOMAIN-KEYWORD,gradle
+  - DOMAIN-KEYWORD,notion
+  - DOMAIN-KEYWORD,wodetaylor
+  - DOMAIN-KEYWORD,mathworks
+  - DOMAIN-SUFFIX,bkcloud.icu
+  - DOMAIN-SUFFIX,sm.ms
+
+
+
+
