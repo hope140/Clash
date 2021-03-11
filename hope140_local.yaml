@@ -321,6 +321,13 @@ rule-providers:
     url: https://raw.githubusercontent.com/blackmatrix7/ios_rule_script/master/rule/Clash/WhiteList/WhiteList.yaml
     interval: 86400
 
+  China:
+    type: http
+    behavior: classical
+    path: ./RuleSet/China.yaml
+    url: https://raw.githubusercontent.com/blackmatrix7/ios_rule_script/master/rule/Clash/China/China.yaml
+    interval: 86400
+
   AdvertisingTest:
     type: http
     behavior: classical
@@ -494,6 +501,7 @@ rule-providers:
 # 分流规则
 rules:
   - RULE-SET,WhiteList,🎯 全球直连
+  - RULE-SET,China,🎯 全球直连
   - RULE-SET,AdvertisingTest,🛑 隐私拦截
   - RULE-SET,Google,🔍️ 谷歌服务
   - RULE-SET,GoogleDrive,🔍️ 谷歌服务
