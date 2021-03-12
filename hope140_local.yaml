@@ -98,7 +98,22 @@ proxy-providers:
       enable: true
       url: http://www.gstatic.com/generate_204
       interval: 300
-
+  负载节点:
+    type: http
+    path: ./Proxy/负载节点.yml
+    url: https://load-balance.com
+    interval: 21600
+    health-check:
+      enable: true
+      url: http://www.gstatic.com/generate_204
+      interval: 300
+  自建节点:
+    type: flie
+    path: /Proxy/自建节点.yml
+    health-check:
+      enable: true
+      url: http://www.gstatic.com/generate_204
+      interval: 300      
 # 节点组
 # 默认每分钟测试一次节点延时
 # 容差参数未开启时默认为0ms
@@ -109,11 +124,13 @@ proxy-groups:
       - ♻️ 自动选择
       - 🔯 故障转移
       - 🔮 负载均衡
+      - 🚀 手动切换
 
   - name: 🚀 手动切换
     type: select
     use:
       - 全球节点
+      - 自建节点
 
   - name: ♻️ 自动选择
     type: url-test
@@ -130,13 +147,14 @@ proxy-groups:
     tolerance: 50
     use:
       - 全球节点
+      - 自建节点
 
   - name: 🔮 负载均衡
     type: load-balance
     url: http://www.gstatic.com/generate_204
     interval: 300
     use:
-      - 全球节点
+      - 负载节点
     lazy: true
     disable-udp: true
     strategy: consistent-hashing
@@ -271,17 +289,6 @@ proxy-groups:
     use:
       - 游戏节点
 
-  - name: 🎯 全球直连
-    type: select
-    proxies:
-      - DIRECT
-
-  - name: 🛑 隐私拦截
-    type: select
-    proxies:
-      - DIRECT
-      - REJECT   
-
   - name: 🇭🇰 香港节点
     type: select
     use:
@@ -311,6 +318,18 @@ proxy-groups:
     type: select
     use:
       - 韩国节点
+
+  - name: 🎯 全球直连
+    type: select
+    proxies:
+      - DIRECT
+
+  - name: 🛑 隐私拦截
+    type: select
+    proxies:
+      - DIRECT
+      - REJECT   
+
 
 # 分流规则订阅
 # 默认每二十四小时更新一次分流规则
