@@ -135,9 +135,11 @@ proxy-groups:
     type: load-balance
     url: http://www.gstatic.com/generate_204
     interval: 300
-    tolerance: 50
     use:
       - 全球节点
+    lazy: true
+    disable-udp: true
+    strategy: consistent-hashing
 
   - name: 📲 电报消息
     type: select
