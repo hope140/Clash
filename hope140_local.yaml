@@ -56,7 +56,7 @@ proxy-providers:
   美国节点:
     type: http
     path: ./Proxy/美国节点.yml
-    url: https://um.com
+    url: https://us.com
     interval: 21600
     health-check:
       enable: true
