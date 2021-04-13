@@ -1,0 +1,514 @@
+port: 10808
+socks-port: 10809
+allow-lan: true
+mode: Rule
+log-level: info
+external-controller: 0.0.0.0:1443
+dns:
+  enable: true
+  listen: 0.0.0.0:53
+  enhanced-mode: fake-ip
+  fake-ip-range: 198.18.0.1/16   # if you don't know what it is, don't change it
+  use-hosts: true                # lookup hosts and return IP record
+  nameserver:
+    - 223.5.5.5                  # 阿里DNS
+    - 223.6.6.6                  # 随便填写你喜欢的DNS
+  fallback:                      # concurrent request with nameserver, 
+    - 8.8.8.8                    # google
+    - 1.1.1.1                    # cloudflare
+  fallback-filter: 
+    geoip: true                  # default    
+    ipcidr:                      # ips in these subnets will be considered polluted
+      - 240.0.0.0/4
+      
+# interval代表间隔时间，单位为s
+# tolerance代表容差时间，单位为ms
+# 由于分流规则引用了Github文件，如果你的本地网络无法访问Github，你将无法让Clash正常工作。
+# 你需要先使用翻墙工具让本地网络出墙，再启动Clash才能正常下载分流规则并正常启动，待Clahs启动成功并更新完订阅资源和分流规则之后，方可关闭你之前打开的翻墙工具。
+# 请使用节点订阅转换服务将服务商的订阅链接转换为Clash的订阅，并输出为Node List格式。
+# 请使用节点订阅转换工具提供的保留节点和过滤节点功能，生成不同地区的订阅链接，并填入下方proxy-providers区域。
+# 其他内容具体见注释。
+# 节点订阅转换网址 https://api.hope140.live
+
+# 节点订阅
+# 默认每六小时更新一次节点订阅
+
+proxy-providers:
+  奈飞节点:
+    type: http
+    path: ./Proxy/奈飞节点.yml
+    url: https://Netflix.com
+    interval: 21600
+    health-check:
+      enable: true
+      url: http://www.gstatic.com/generate_204
+      interval: 300
+  游戏节点:
+    type: http
+    path: ./Proxy/游戏节点.yml
+    url: https://game.com
+    interval: 21600
+    health-check:
+      enable: true
+      url: http://www.gstatic.com/generate_204
+      interval: 300
+  香港节点:
+    type: http
+    path: ./Proxy/香港节点.yml
+    url: https://hk.com
+    interval: 21600
+    health-check:
+      enable: true
+      url: http://www.gstatic.com/generate_204
+      interval: 300
+  日本节点:
+    type: http
+    path: ./Proxy/日本节点.yml
+    url: https://jp.com
+    interval: 21600
+    health-check:
+      enable: true
+      url: http://www.gstatic.com/generate_204
+      interval: 300
+  美国节点:
+    type: http
+    path: ./Proxy/美国节点.yml
+    url: https://us.com
+    interval: 21600
+    health-check:
+      enable: true
+      url: http://www.gstatic.com/generate_204
+      interval: 300
+  台湾节点:
+    type: http
+    path: ./Proxy/台湾节点.yml
+    url: https://tw.com
+    interval: 21600
+    health-check:
+      enable: true
+      url: http://www.gstatic.com/generate_204
+      interval: 300
+  狮城节点:
+    type: http
+    path: ./Proxy/狮城节点.yml
+    url: https://sg.com
+    interval: 21600
+    health-check:
+      enable: true
+      url: http://www.gstatic.com/generate_204
+      interval: 300
+  韩国节点:
+    type: http
+    path: ./Proxy/韩国节点.yml
+    url: https://kr.com
+    interval: 21600
+    health-check:
+      enable: true
+      url: http://www.gstatic.com/generate_204
+      interval: 300
+  全球节点:
+    type: http
+    path: ./Proxy/全球节点.yml
+    url: https://global.com
+    interval: 21600
+    health-check:
+      enable: true
+      url: http://www.gstatic.com/generate_204
+      interval: 300
+  负载节点:
+    type: http
+    path: ./Proxy/负载节点.yml
+    url: https://load-balance.com
+    interval: 21600
+    health-check:
+      enable: true
+      url: http://www.gstatic.com/generate_204
+      interval: 300
+  自建节点:
+    type: file
+    path: /Proxy/自建节点.yml
+    health-check:
+      enable: true
+      url: http://www.gstatic.com/generate_204
+      interval: 300
+  音乐节点:
+    type: file
+    path: /Proxy/音乐节点.yml
+    health-check:
+      enable: true
+      url: http://www.gstatic.com/generate_204
+      interval: 300
+proxy-groups:
+  - name: ✈️ 节点选择
+    type: select
+    proxies:
+      - ♻️ 自动选择
+      - 🔯 故障转移
+      - 🔮 负载均衡
+      - 🚀 手动切换
+  - name: 🚀 手动切换
+    type: select
+    use:
+      - 自建节点
+      - 全球节点
+  - name: ♻️ 自动选择
+    type: url-test
+    url: http://www.gstatic.com/generate_204
+    interval: 300
+    tolerance: 50
+    use:
+      - 全球节点
+  - name: 🔯 故障转移
+    type: fallback
+    url: http://www.gstatic.com/generate_204
+    interval: 300
+    tolerance: 50
+    use:
+      - 全球节点
+      - 自建节点
+  - name: 🔮 负载均衡
+    type: load-balance
+    url: http://www.gstatic.com/generate_204
+    interval: 300
+    use:
+      - 负载节点
+    lazy: true
+    disable-udp: true
+    strategy: consistent-hashing
+  - name: 📲 电报消息
+    type: select
+    proxies:
+      - ✈️ 节点选择
+      - ♻️ 自动选择
+      - 🔯 故障转移
+      - 🚀 手动切换
+  - name: 📹 油管视频
+    type: select
+    proxies:
+      - ✈️ 节点选择
+      - 🇸🇬 狮城节点
+      - 🇭🇰 香港节点
+      - 🇨🇳 台湾节点
+      - 🇯🇵 日本节点
+      - 🇺🇲 美国节点
+      - 🇰🇷 韩国节点
+      - 🚀 手动切换
+  - name: 💻 奈飞视频
+    type: select
+    proxies:
+      - 💿 奈飞节点
+      - 🇸🇬 狮城节点
+      - 🇭🇰 香港节点
+      - 🇨🇳 台湾节点
+      - 🇯🇵 日本节点
+      - 🇺🇲 美国节点
+      - 🇰🇷 韩国节点
+      - 🚀 手动切换
+  - name: 🌍 国外媒体
+    type: select
+    proxies:
+      - ✈️ 节点选择
+      - 🇸🇬 狮城节点
+      - 🇭🇰 香港节点
+      - 🇨🇳 台湾节点
+      - 🇯🇵 日本节点
+      - 🇺🇲 美国节点
+      - 🇰🇷 韩国节点
+      - 🚀 手动切换
+  - name: 🌏 国内媒体
+    type: select
+    proxies:
+      - 🎯 全球直连
+      - ✈️ 节点选择
+      - 🚀 手动切换
+  - name: 📺 哔哩哔哩
+    type: select
+    proxies:
+      - 🎯 全球直连
+      - 🇭🇰 香港节点
+      - 🇨🇳 台湾节点
+  - name: 🎮 游戏平台
+    type: select
+    proxies:
+      - 🎯 全球直连
+      - 🎲 游戏节点
+      - 🚀 手动切换
+  - name: Ⓜ️ 微软云盘
+    type: select
+    proxies:
+      - 🎯 全球直连
+      - ✈️ 节点选择
+      - 🇺🇲 美国节点
+      - 🚀 手动切换
+  - name: ⌨️ 微软服务
+    type: select
+    proxies:
+      - 🎯 全球直连
+      - ✈️ 节点选择
+      - 🇺🇲 美国节点
+      - 🚀 手动切换
+  - name: 🎵 网易音乐
+    type: select
+    proxies:
+      - 🎯 全球直连
+      - 🎵 音乐节点 
+  - name: 🔍️ 谷歌服务
+    type: select
+    proxies:
+      - 🎯 全球直连
+      - ✈️ 节点选择
+      - 🇺🇲 美国节点
+      - 🚀 手动切换
+  - name: 🐟 漏网之鱼
+    type: select
+    proxies:
+      - 🎯 全球直连
+      - ✈️ 节点选择
+      - ♻️ 自动选择
+      - 🚀 手动切换
+  - name: 💿 奈飞节点
+    type: select
+    use:
+      - 奈飞节点
+  - name: 🎲 游戏节点
+    type: select
+    use:
+      - 游戏节点
+  - name: 🎵 音乐节点 
+    type: fallback
+    use:
+      - 音乐节点
+    url: http://www.gstatic.com/generate_204
+    interval: 600
+  - name: 🇭🇰 香港节点
+    type: select
+    use:
+      - 香港节点
+  - name: 🇯🇵 日本节点
+    type: fallback
+    use:
+      - 日本节点
+    url: http://www.gstatic.com/generate_204
+    interval: 600
+  - name: 🇺🇲 美国节点
+    type: select
+    use:
+      - 美国节点
+  - name: 🇨🇳 台湾节点
+    type: select
+    use:
+      - 台湾节点
+  - name: 🇸🇬 狮城节点
+    type: fallback
+    use:
+      - 狮城节点    
+    url: http://www.gstatic.com/generate_204
+    interval: 600
+  - name: 🇰🇷 韩国节点
+    type: fallback
+    use:
+      - 韩国节点    
+    url: http://www.gstatic.com/generate_204
+    interval: 600
+  - name: 🎯 全球直连
+    type: select
+    proxies:
+      - DIRECT
+  - name: 🛑 隐私拦截
+    type: select
+    proxies:
+      - DIRECT
+      - REJECT
+rule-providers:
+  WhiteList:
+    type: http
+    behavior: classical
+    path: ./RuleSet/WhiteList.yaml
+    url: https://raw.githubusercontent.com/blackmatrix7/ios_rule_script/master/rule/Clash/WhiteList/WhiteList.yaml
+    interval: 86400
+  China:
+    type: http
+    behavior: classical
+    path: ./RuleSet/China.yaml
+    url: https://raw.githubusercontent.com/blackmatrix7/ios_rule_script/master/rule/Clash/China/China.yaml
+    interval: 86400
+  AdvertisingTest:
+    type: http
+    behavior: classical
+    path: ./RuleSet/AdvertisingTest.yaml
+    url: https://raw.githubusercontent.com/blackmatrix7/ios_rule_script/master/rule/Clash/AdvertisingTest/AdvertisingTest.yaml
+    interval: 86400
+  Hijacking:
+    type: http
+    behavior: classical
+    path: ./RuleSet/Hijacking.yaml
+    url: https://raw.githubusercontent.com/blackmatrix7/ios_rule_script/master/rule/Clash/Hijacking/Hijacking.yaml
+    interval: 86400
+  Privacy:
+    type: http
+    behavior: classical
+    path: ./RuleSet/Privacy.yaml
+    url: https://raw.githubusercontent.com/blackmatrix7/ios_rule_script/master/rule/Clash/Privacy/Privacy_Classical.yaml
+    interval: 86400
+  Google:
+    type: http
+    behavior: classical
+    path: ./RuleSet/Google.yaml
+    url: https://raw.githubusercontent.com/blackmatrix7/ios_rule_script/master/rule/Clash/Google/Google.yaml
+    interval: 86400
+  GoogleDrive:
+    type: http
+    behavior: classical
+    path: ./RuleSet/GoogleDrive.yaml
+    url: https://raw.githubusercontent.com/blackmatrix7/ios_rule_script/master/rule/Clash/GoogleDrive/GoogleDrive.yaml
+    interval: 86400
+  OneDrive:
+    type: http
+    behavior: classical
+    path: ./RuleSet/OneDrive.yaml
+    url: https://raw.githubusercontent.com/blackmatrix7/ios_rule_script/master/rule/Clash/OneDrive/OneDrive.yaml
+    interval: 86400
+  Microsoft:
+    type: http
+    behavior: classical
+    path: ./RuleSet/Microsoft.yaml
+    url: https://raw.githubusercontent.com/blackmatrix7/ios_rule_script/master/rule/Clash/Microsoft/Microsoft.yaml
+    interval: 86400
+  Github:
+    type: http
+    behavior: classical
+    path: ./RuleSet/Github.yaml
+    url: https://raw.githubusercontent.com/blackmatrix7/ios_rule_script/master/rule/Clash/Github/Github.yaml
+    interval: 86400
+  Telegram:
+    type: http
+    behavior: classical
+    path: ./RuleSet/Telegram.yaml
+    url: https://raw.githubusercontent.com/blackmatrix7/ios_rule_script/master/rule/Clash/Telegram/Telegram.yaml
+    interval: 86400
+  Epic:
+    type: http
+    behavior: classical
+    path: ./RuleSet/Epic.yaml
+    url: https://raw.githubusercontent.com/blackmatrix7/ios_rule_script/master/rule/Clash/Epic/Epic.yaml
+    interval: 86400
+  Battle:
+    type: http
+    behavior: classical
+    path: ./RuleSet/Battle.yaml
+    url: https://raw.githubusercontent.com/blackmatrix7/ios_rule_script/master/rule/Clash/Battle/Battle.yaml
+    interval: 86400
+  Steam:
+    type: http
+    behavior: classical
+    path: ./RuleSet/Steam.yaml
+    url: https://raw.githubusercontent.com/blackmatrix7/ios_rule_script/master/rule/Clash/Steam/Steam.yaml
+    interval: 86400
+  EA:
+    type: http
+    behavior: classical
+    path: ./RuleSet/EA.yaml
+    url: https://raw.githubusercontent.com/blackmatrix7/ios_rule_script/master/rule/Clash/EA/EA.yaml
+    interval: 86400
+  YouTube:
+    type: http
+    behavior: classical
+    path: ./RuleSet/YouTube.yaml
+    url: https://raw.githubusercontent.com/blackmatrix7/ios_rule_script/master/rule/Clash/YouTube/YouTube.yaml
+    interval: 86400
+  Netflix:
+    type: http
+    behavior: classical
+    path: ./RuleSet/Netflix.yaml
+    url: https://raw.githubusercontent.com/blackmatrix7/ios_rule_script/master/rule/Clash/Netflix/Netflix.yaml
+    interval: 86400
+  Bahamut:
+    type: http
+    behavior: classical
+    path: ./RuleSet/Bahamut.yaml
+    url: https://raw.githubusercontent.com/blackmatrix7/ios_rule_script/master/rule/Clash/Bahamut/Bahamut.yaml
+    interval: 86400
+  GlobalMedia:
+    type: http
+    behavior: classical
+    path: ./RuleSet/GlobalMedia.yaml
+    url: https://raw.githubusercontent.com/blackmatrix7/ios_rule_script/master/rule/Clash/GlobalMedia/GlobalMedia.yaml
+    interval: 86400
+  Bilibili:
+    type: http
+    behavior: classical
+    path: ./RuleSet/Bilibili.yaml
+    url: https://raw.githubusercontent.com/blackmatrix7/ios_rule_script/master/rule/Clash/BiliBili/BiliBili.yaml
+    interval: 86400
+  NetEaseMusic:
+    type: http
+    behavior: classical
+    path: ./RuleSet/NetEaseMusic.yaml
+    url: https://raw.githubusercontent.com/blackmatrix7/ios_rule_script/master/rule/Clash/NetEaseMusic/NetEaseMusic.yaml
+    interval: 86400
+  ChinaMedia:
+    type: http
+    behavior: classical
+    path: ./RuleSet/ChinaMedia.yaml
+    url: https://raw.githubusercontent.com/blackmatrix7/ios_rule_script/master/rule/Clash/ChinaMedia/ChinaMedia.yaml
+    interval: 86400
+  Developer:
+    type: http
+    behavior: classical
+    path: ./RuleSet/Developer.yaml
+    url: https://raw.githubusercontent.com/blackmatrix7/ios_rule_script/master/rule/Clash/Developer/Developer.yaml
+    interval: 86400
+  Proxy:
+    type: http
+    behavior: classical
+    path: ./RuleSet/Proxy.yaml
+    url: https://raw.githubusercontent.com/hope140/Clash/beta/Proxy.yaml
+    interval: 86400
+  Download:
+    type: http
+    behavior: classical
+    path: ./RuleSet/Download.yaml
+    url: https://raw.githubusercontent.com/blackmatrix7/ios_rule_script/master/rule/Clash/Download/Download.yaml
+    interval: 86400
+  Lan:
+    type: http
+    behavior: classical
+    path: ./RuleSet/Lan.yaml
+    url: https://raw.githubusercontent.com/blackmatrix7/ios_rule_script/master/rule/Clash/Lan/Lan.yaml
+    interval: 86400
+  Direct:
+    type: http
+    behavior: classical
+    path: ./RuleSet/Direct.yaml
+    url: https://raw.githubusercontent.com/hope140/Clash/beta/Direct.yaml
+    interval: 86400
+rules:
+  - RULE-SET,WhiteList,🎯 全球直连
+  - RULE-SET,Download,🎯 全球直连
+  - RULE-SET,Lan,🎯 全球直连
+  - RULE-SET,AdvertisingTest,🛑 隐私拦截
+  - RULE-SET,Hijacking,🛑 隐私拦截
+  - RULE-SET,Privacy,🛑 隐私拦截
+  - RULE-SET,Google,🔍️ 谷歌服务
+  - RULE-SET,GoogleDrive,🔍️ 谷歌服务
+  - RULE-SET,OneDrive,Ⓜ️ 微软云盘
+  - RULE-SET,Microsoft,⌨️ 微软服务
+  - RULE-SET,Github,⌨️ 微软服务
+  - RULE-SET,Telegram,📲 电报消息
+  - RULE-SET,Epic,🎮 游戏平台
+  - RULE-SET,Battle,🎮 游戏平台
+  - RULE-SET,Steam,🎮 游戏平台
+  - RULE-SET,EA,🎮 游戏平台
+  - RULE-SET,YouTube,📹 油管视频
+  - RULE-SET,Netflix,💻 奈飞视频
+  - RULE-SET,Bahamut,🌍 国外媒体
+  - RULE-SET,GlobalMedia,🌍 国外媒体
+  - RULE-SET,Bilibili,📺 哔哩哔哩
+  - RULE-SET,NetEaseMusic,🎵 网易音乐
+  - RULE-SET,ChinaMedia,🌏 国内媒体
+  - RULE-SET,Developer,✈️ 节点选择
+  - RULE-SET,Proxy,✈️ 节点选择
+  - RULE-SET,China,🎯 全球直连
+  - RULE-SET,Direct,🎯 全球直连
+  - GEOIP,CN,DIRECT
+  - MATCH,🐟 漏网之鱼
