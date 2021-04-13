@@ -5,7 +5,8 @@
 # 分组较全，加入acl4ssr规则后去广告效果明显，但black的
 
 ruleset=🎯 全球直连,https://raw.githubusercontent.com/blackmatrix7/ios_rule_script/master/rule/Clash/WhiteList/WhiteList.yaml
-ruleset=🎯 全球直连,https://raw.githubusercontent.com/blackmatrix7/ios_rule_script/master/rule/Clash/China/China.yaml
+ruleset=🎯 全球直连,https://raw.githubusercontent.com/blackmatrix7/ios_rule_script/master/rule/Clash/Download/Download.yaml
+ruleset=🎯 全球直连,https://raw.githubusercontent.com/blackmatrix7/ios_rule_script/master/rule/Clash/Lan/Lan.yaml
 ruleset=🛑 隐私拦截,https://raw.githubusercontent.com/ACL4SSR/ACL4SSR/master/Clash/BanAD.list
 ruleset=🛑 隐私拦截,https://raw.githubusercontent.com/ACL4SSR/ACL4SSR/master/Clash/BanProgramAD.list
 ruleset=🛑 隐私拦截,https://raw.githubusercontent.com/ACL4SSR/ACL4SSR/master/Clash/BanEasyList.list
@@ -34,8 +35,7 @@ ruleset=📺 哔哩哔哩,https://raw.githubusercontent.com/blackmatrix7/ios_rul
 ruleset=🌏 国内媒体,https://raw.githubusercontent.com/blackmatrix7/ios_rule_script/master/rule/Clash/ChinaMedia/ChinaMedia.yaml
 ruleset=✈️ 节点选择,https://raw.githubusercontent.com/blackmatrix7/ios_rule_script/master/rule/Clash/Developer/Developer.yaml
 ruleset=✈️ 节点选择,https://raw.githubusercontent.com/hope140/Clash/beta/Proxy.list
-ruleset=🎯 全球直连,https://raw.githubusercontent.com/blackmatrix7/ios_rule_script/master/rule/Clash/Download/Download.yaml
-ruleset=🎯 全球直连,https://raw.githubusercontent.com/blackmatrix7/ios_rule_script/master/rule/Clash/Lan/Lan.yaml
+ruleset=🎯 全球直连,https://raw.githubusercontent.com/blackmatrix7/ios_rule_script/master/rule/Clash/China/China.yaml
 ruleset=🎯 全球直连,https://raw.githubusercontent.com/hope140/Clash/beta/Direct.list
 ruleset=🎯 全球直连,[]GEOIP,CN
 ruleset=🐟 漏网之鱼,[]FINAL
