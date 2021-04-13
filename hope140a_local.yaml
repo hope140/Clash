@@ -484,7 +484,8 @@ rule-providers:
     interval: 86400
 rules:
   - RULE-SET,WhiteList,🎯 全球直连
-  - RULE-SET,China,🎯 全球直连
+  - RULE-SET,Download,🎯 全球直连
+  - RULE-SET,Lan,🎯 全球直连
   - RULE-SET,AdvertisingTest,🛑 隐私拦截
   - RULE-SET,Hijacking,🛑 隐私拦截
   - RULE-SET,Privacy,🛑 隐私拦截
@@ -507,8 +508,7 @@ rules:
   - RULE-SET,ChinaMedia,🌏 国内媒体
   - RULE-SET,Developer,✈️ 节点选择
   - RULE-SET,Proxy,✈️ 节点选择
-  - RULE-SET,Download,🎯 全球直连
-  - RULE-SET,Lan,🎯 全球直连
+  - RULE-SET,China,🎯 全球直连
   - RULE-SET,Direct,🎯 全球直连
   - GEOIP,CN,DIRECT
   - MATCH,🐟 漏网之鱼
