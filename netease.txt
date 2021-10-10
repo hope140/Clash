@@ -1,2 +1,2 @@
-http = 192.168.1.103:2333, username=none, password=none, fast-open=true, tls-verification=true, tag=本地服务
-http = 128.199.217.182:2333, username=none, password=none, fast-open=true, tls-verification=true, tag=远程服务
+本地服务 = http,192.168.1.103,2333
+远程服务 = http,128.199.217.182,2333
