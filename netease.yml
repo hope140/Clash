@@ -1,3 +1,0 @@
-proxies:
-  - {name: 本地服务, server: 192.168.1.103, port: 2333, type: http, username: "", password: "", tls: false}
-  - {name: 远程服务, server: 128.199.217.182, port: 2333, type: http, username: "", password: "", tls: false}

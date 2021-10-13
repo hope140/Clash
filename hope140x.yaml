@@ -16,7 +16,7 @@ server=/dl.google.com/119.29.29.29
 server=/dl.l.google.com/119.29.29.29
 
 [policy]
-static=节点选择, 自动选择, 故障转移, 手动切换
+static=节点选择, 自动选择, 故障转移, 手动切换, img-url= https://raw.githubusercontent.com/Orz-3/mini/master/Alpha/Global.png
 static=手动切换, 全球节点
 static=通讯服务, 节点选择, 自动选择, 故障转移, 手动切换
 static=油管视频, 节点选择, 香港节点, 台湾节点, 日本节点, 美国节点, 狮城节点, 韩国节点, 手动切换
