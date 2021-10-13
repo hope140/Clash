@@ -1,70 +1,110 @@
-[custom]
+[general]
+server_check_url=http://cp.cloudflare.com/generate_204
+network_check_url=http://www.aliyun.com
+dns_exclusion_list=*.cmpassport.com, *.jegotrip.com.cn, *.icitymobile.mobi, id6.me, *.pingan.com.cn, *.cmbchina.com
+geo_location_checker=http://ip-api.com/json/?lang=zh-CN, https://raw.githubusercontent.com/Orz-3/Orz-3/master/QuantumultX/IP.js
+resource_parser_url=https://cdn.jsdelivr.net/gh/KOP-XIAO/QuantumultX@master/Scripts/resource-parser.js
+excluded_routes=10.0.0.0/8, 127.0.0.0/8, 169.254.0.0/16, 192.0.2.0/24, 192.168.0.0/16, 198.51.100.0/24, 224.0.0.0/4
+fallback_udp_policy=direct
 
-# 基于ACL4SSR,blackmatrix7
-# 自用 圈x
+[dns]
+server = 223.5.5.5
+server = 223.6.6.6
+server=119.29.29.29
+address=/mtalk.google.com/108.177.125.188
+server=/dl.google.com/119.29.29.29
+server=/dl.l.google.com/119.29.29.29
 
-ruleset=🎯 全球直连,https://raw.githubusercontent.com/ACL4SSR/ACL4SSR/master/Clash/LocalAreaNetwork.list
-ruleset=🎯 全球直连,https://raw.githubusercontent.com/ACL4SSR/ACL4SSR/master/Clash/UnBan.list
-;ruleset=🛑 广告拦截,https://raw.githubusercontent.com/blackmatrix7/ios_rule_script/master/rule/Clash/AdvertisingTest/AdvertisingTest.yaml
-ruleset=📢 谷歌FCM,https://raw.githubusercontent.com/ACL4SSR/ACL4SSR/master/Clash/Ruleset/GoogleFCM.list
-ruleset=🎯 全球直连,https://raw.githubusercontent.com/ACL4SSR/ACL4SSR/master/Clash/GoogleCN.list
-ruleset=Ⓜ️ 微软云盘,https://raw.githubusercontent.com/blackmatrix7/ios_rule_script/master/rule/Clash/OneDrive/OneDrive.yaml
-ruleset=⌨️ 微软服务,https://raw.githubusercontent.com/blackmatrix7/ios_rule_script/master/rule/Clash/Microsoft/Microsoft.yaml
-ruleset=🍎 苹果服务,https://raw.githubusercontent.com/blackmatrix7/ios_rule_script/master/rule/Clash/Apple/Apple.yaml
-ruleset=🍎 苹果服务,https://raw.githubusercontent.com/blackmatrix7/ios_rule_script/master/rule/Clash/SystemOTA/SystemOTA.yaml
-ruleset=📲 电报消息,https://raw.githubusercontent.com/ACL4SSR/ACL4SSR/master/Clash/Telegram.list
-ruleset=🎮 游戏平台,https://raw.githubusercontent.com/ACL4SSR/ACL4SSR/master/Clash/Ruleset/Epic.list
-ruleset=🎮 游戏平台,https://raw.githubusercontent.com/ACL4SSR/ACL4SSR/master/Clash/Ruleset/Sony.list
-ruleset=🎮 游戏平台,https://raw.githubusercontent.com/ACL4SSR/ACL4SSR/master/Clash/Ruleset/Steam.list
-ruleset=📹 油管视频,https://raw.githubusercontent.com/ACL4SSR/ACL4SSR/master/Clash/Ruleset/YouTube.list
-ruleset=💻 奈飞视频,https://raw.githubusercontent.com/ACL4SSR/ACL4SSR/master/Clash/Ruleset/Netflix.list
-ruleset=🌍 国外媒体,https://raw.githubusercontent.com/ACL4SSR/ACL4SSR/master/Clash/Ruleset/Bahamut.list
-ruleset=📺 哔哩哔哩,https://raw.githubusercontent.com/ACL4SSR/ACL4SSR/master/Clash/Ruleset/Bilibili.list
-ruleset=📺 哔哩哔哩,https://raw.githubusercontent.com/ACL4SSR/ACL4SSR/master/Clash/Ruleset/BilibiliHMT.list
-;ruleset=🎵 网易音乐,https://raw.githubusercontent.com/hope140/Clash/beta/NetEaseMusic.list
-ruleset=🌏 国内媒体,https://raw.githubusercontent.com/ACL4SSR/ACL4SSR/master/Clash/ChinaMedia.list
-ruleset=🌍 国外媒体,https://raw.githubusercontent.com/ACL4SSR/ACL4SSR/master/Clash/ProxyMedia.list
-ruleset=✈️ 节点选择,https://raw.githubusercontent.com/ACL4SSR/ACL4SSR/master/Clash/ProxyGFWlist.list
-ruleset=✈️ 节点选择,https://raw.githubusercontent.com/hope140/Clash/beta/Proxy.list
-ruleset=🎯 全球直连,https://raw.githubusercontent.com/ACL4SSR/ACL4SSR/master/Clash/ChinaIp.list
-ruleset=🎯 全球直连,https://raw.githubusercontent.com/ACL4SSR/ACL4SSR/master/Clash/ChinaDomain.list
-ruleset=🎯 全球直连,https://raw.githubusercontent.com/ACL4SSR/ACL4SSR/master/Clash/ChinaCompanyIp.list
-ruleset=🎯 全球直连,https://raw.githubusercontent.com/ACL4SSR/ACL4SSR/master/Clash/Download.list
-ruleset=🎯 全球直连,https://raw.githubusercontent.com/hope140/Clash/beta/Direct.list
-ruleset=🎯 全球直连,[]GEOIP,CN
-ruleset=🐟 漏网之鱼,[]FINAL
+[policy]
+static=节点选择, 自动选择, 故障转移, 手动切换, img-url= https://raw.githubusercontent.com/Orz-3/mini/master/Alpha/Global.png
+static=手动切换, 全球节点
+static=通讯服务, 节点选择, 自动选择, 故障转移, 手动切换
+static=油管视频, 节点选择, 香港节点, 台湾节点, 日本节点, 美国节点, 狮城节点, 韩国节点, 手动切换
+static=奈飞视频, 奈飞节点, 香港节点, 台湾节点, 日本节点, 美国节点, 狮城节点, 韩国节点, 手动切换
+static=国外媒体, 节点选择, 香港节点, 台湾节点, 日本节点, 美国节点, 狮城节点, 韩国节点, 手动切换
+static=国内媒体, 全球直连, 节点选择, 手动切换
+static=哔哩哔哩, 全球直连, 香港节点, 台湾节点
+static=微软服务, 全球直连, 节点选择, 美国节点, 手动切换
+static=苹果服务, 节点选择, 香港节点, 台湾节点, 美国节点, 手动切换
+static=谷歌服务, 全球直连, 节点选择, 美国节点, 手动切换
+static=网易音乐, 音乐节点
+static=漏网之鱼, 全球直连, 节点选择, 手动切换
+static=音乐节点, resource-tag-regex=netease
+static=奈飞节点, server-tag-regex=Netflix|NF|nf|流媒体
+static=全球节点, server-tag-regex=Basic
+url-latency-benchmark=自动选择, server-tag-regex=Basic, check-interval=600, tolerance=0
+available=故障转移, server-tag-regex=Basic
+static=全球直连, direct
+static=隐私拦截, reject
+url-latency-benchmark=香港节点, server-tag-regex=(?=.*(港|HK|(?i)Hong))^((?!(台|日|韩|新|美)).)*$, check-interval=600, tolerance=0, img-url=https://raw.githubusercontent.com/Orz-3/mini/master/Color/HK.png
+url-latency-benchmark=台湾节点, server-tag-regex=(?=.*(台|TW|(?i)Taiwan))^((?!(港|日|韩|新|美)).)*$, check-interval=600, tolerance=0, img-url=https://raw.githubusercontent.com/Orz-3/mini/master/Color/TW.png
+url-latency-benchmark=日本节点, server-tag-regex=(?=.*(日|JP|(?i)Japan))^((?!(港|台|韩|新|美)).)*$, check-interval=600, tolerance=0, img-url=https://raw.githubusercontent.com/Orz-3/mini/master/Color/JP.png
+url-latency-benchmark=狮城节点, server-tag-regex=(?=.*(新|狮|獅|SG|(?i)Singapore))^((?!(港|台|日|韩|美)).)*$, check-interval=600, tolerance=0, img-url=https://raw.githubusercontent.com/Orz-3/mini/master/Color/SG.png
+url-latency-benchmark=美国节点, server-tag-regex=(?=.*(美|US|(?i)States|American))^((?!(港|台|日|韩|新)).)*$, check-interval=600, tolerance=0, img-url=https://raw.githubusercontent.com/Orz-3/mini/master/Color/US.png
+url-latency-benchmark=韩国节点, server-tag-regex=(?=.*(韩|KR|(?i)States|Korean))^((?!(港|台|日|美|新)).)*$, check-interval=600, tolerance=0, img-url=https://raw.githubusercontent.com/Orz-3/mini/master/Color/KR.png
 
-
-custom_proxy_group=✈️ 节点选择`select`[]♻️ 自动选择`[]🔯 故障转移`[]🔮 负载均衡`[]🇭🇰 香港节点`[]🇨🇳 台湾节点`[]🇸🇬 狮城节点`[]🇯🇵 日本节点`[]🇺🇲 美国节点`[]🇰🇷 韩国节点`[]🚀 手动切换`[]DIRECT
-custom_proxy_group=🚀 手动切换`select`.*
-custom_proxy_group=♻️ 自动选择`url-test`.*`http://www.gstatic.com/generate_204`300,,50
-custom_proxy_group=🔯 故障转移`fallback`.*`http://www.gstatic.com/generate_204`300,,50
-custom_proxy_group=🔮 负载均衡`load-balance`.*`http://www.gstatic.com/generate_204`300,,50
-custom_proxy_group=📲 电报消息`select`[]✈️ 节点选择`[]♻️ 自动选择`[]🇸🇬 狮城节点`[]🇭🇰 香港节点`[]🇨🇳 台湾节点`[]🇯🇵 日本节点`[]🇺🇲 美国节点`[]🇰🇷 韩国节点`[]🚀 手动切换`[]DIRECT
-custom_proxy_group=📹 油管视频`select`[]✈️ 节点选择`[]♻️ 自动选择`[]🇸🇬 狮城节点`[]🇭🇰 香港节点`[]🇨🇳 台湾节点`[]🇯🇵 日本节点`[]🇺🇲 美国节点`[]🇰🇷 韩国节点`[]🚀 手动切换`[]DIRECT
-custom_proxy_group=💻 奈飞视频`select`[]💿 奈飞节点`[]✈️ 节点选择`[]♻️ 自动选择`[]🇸🇬 狮城节点`[]🇭🇰 香港节点`[]🇨🇳 台湾节点`[]🇯🇵 日本节点`[]🇺🇲 美国节点`[]🇰🇷 韩国节点`[]🚀 手动切换`[]DIRECT
-custom_proxy_group=🌍 国外媒体`select`[]✈️ 节点选择`[]♻️ 自动选择`[]🇭🇰 香港节点`[]🇨🇳 台湾节点`[]🇸🇬 狮城节点`[]🇯🇵 日本节点`[]🇺🇲 美国节点`[]🇰🇷 韩国节点`[]🚀 手动切换`[]DIRECT
-custom_proxy_group=🌏 国内媒体`select`[]DIRECT`[]🇭🇰 香港节点`[]🇨🇳 台湾节点`[]🇸🇬 狮城节点`[]🇯🇵 日本节点`[]🚀 手动切换
-custom_proxy_group=📺 哔哩哔哩`select`[]🎯 全球直连`[]🇨🇳 台湾节点`[]🇭🇰 香港节点
-custom_proxy_group=🎮 游戏平台`select`[]DIRECT`[]🎲 游戏节点`[]✈️ 节点选择`[]🚀 手动切换
-custom_proxy_group=Ⓜ️ 微软云盘`select`[]DIRECT`[]✈️ 节点选择`[]🇺🇲 美国节点`[]🚀 手动切换
-custom_proxy_group=⌨️ 微软服务`select`[]DIRECT`[]✈️ 节点选择`[]🇺🇲 美国节点`[]🇭🇰 香港节点`[]🇨🇳 台湾节点`[]🇸🇬 狮城节点`[]🇯🇵 日本节点`[]🇰🇷 韩国节点`[]🚀 手动切换
-custom_proxy_group=🍎 苹果服务`select`[]DIRECT`[]✈️ 节点选择`[]🇺🇲 美国节点`[]🇭🇰 香港节点`[]🇨🇳 台湾节点`[]🇸🇬 狮城节点`[]🇯🇵 日本节点`[]🇰🇷 韩国节点`[]🚀 手动切换
-custom_proxy_group=🐟 漏网之鱼`select`[]✈️ 节点选择`[]♻️ 自动选择`[]🔮 负载均衡`[]DIRECT`[]🚀 手动切换
-custom_proxy_group=📢 谷歌FCM`select`[]DIRECT`[]✈️ 节点选择`[]🇺🇲 美国节点`[]🇭🇰 香港节点`[]🇨🇳 台湾节点`[]🇸🇬 狮城节点`[]🇯🇵 日本节点`[]🇰🇷 韩国节点`[]🚀 手动切换
-custom_proxy_group=💿 奈飞节点`select`(NF|奈飞|解锁|Netflix|NETFLIX|Media|UNLOCK)
-custom_proxy_group=🎲 游戏节点`select`(IPLC|IEPL|专线|BGP)
-custom_proxy_group=🇭🇰 香港节点`select`(港|HK|Hong Kong)
-custom_proxy_group=🇯🇵 日本节点`select`(日本|川日|东京|大阪|泉日|埼玉|沪日|深日|[^-]日|JP|Japan)
-custom_proxy_group=🇺🇲 美国节点`select`(美|波特兰|达拉斯|俄勒冈|凤凰城|费利蒙|硅谷|拉斯维加斯|洛杉矶|圣何塞|圣克拉拉|西雅图|芝加哥|US|United States)
-custom_proxy_group=🇨🇳 台湾节点`select`(台|新北|彰化|TW|Taiwan)
-custom_proxy_group=🇸🇬 狮城节点`select`(新加坡|坡|狮城|SG|Singapore)
-custom_proxy_group=🇰🇷 韩国节点`select`(KR|Korea|KOR|首尔|韩|韓)
-custom_proxy_group=🎯 全球直连`select`[]DIRECT`[]✈️ 节点选择`[]♻️ 自动选择
-;custom_proxy_group=🛑 广告拦截`select`[]REJECT`[]DIRECT
+[server_remote]
 
 
-enable_rule_generator=true
-overwrite_original_rules=true
+[filter_remote]
+https://ghproxy.com/https://raw.githubusercontent.com/blackmatrix7/ios_rule_script/master/rule/QuantumultX/WhiteList/WhiteList.list, tag=WhiteList, force-policy=全球直连, update-interval=86400, opt-parser=true, enabled=true
+https://ghproxy.com/https://raw.githubusercontent.com/blackmatrix7/ios_rule_script/master/rule/QuantumultX/China/China.list, tag=China, force-policy=全球直连, update-interval=86400, opt-parser=true, enabled=true
+https://ghproxy.com/https://raw.githubusercontent.com/blackmatrix7/ios_rule_script/master/rule/QuantumultX/AdvertisingTest/AdvertisingTest.list, tag=AdvertisingTest, force-policy=隐私拦截, update-interval=86400, opt-parser=true, enabled=true
+https://ghproxy.com/https://raw.githubusercontent.com/blackmatrix7/ios_rule_script/master/rule/QuantumultX/Google/Google.list, tag=Google, force-policy=谷歌服务, update-interval=86400, opt-parser=true, enabled=true
+https://ghproxy.com/https://raw.githubusercontent.com/blackmatrix7/ios_rule_script/master/rule/QuantumultX/GoogleDrive/GoogleDrive.list, tag=GoogleDrive, force-policy=谷歌服务, update-interval=86400, opt-parser=true, enabled=true
+https://ghproxy.com/https://raw.githubusercontent.com/blackmatrix7/ios_rule_script/master/rule/QuantumultX/Microsoft/Microsoft.list, tag=Microsoft, force-policy=微软服务, update-interval=86400, opt-parser=true, enabled=true
+https://ghproxy.com/https://raw.githubusercontent.com/blackmatrix7/ios_rule_script/master/rule/QuantumultX/GitHub/GitHub.list, tag=Github, force-policy=微软服务, update-interval=86400, opt-parser=true, enabled=true
+https://ghproxy.com/https://raw.githubusercontent.com/blackmatrix7/ios_rule_script/master/rule/QuantumultX/Apple/Apple.list, tag=Apple, force-policy=苹果服务, update-interval=86400, opt-parser=true, enabled=true
+https://ghproxy.com/https://raw.githubusercontent.com/blackmatrix7/ios_rule_script/master/rule/QuantumultX/Telegram/Telegram.list, tag=Telegram, force-policy=通讯服务, update-interval=86400, opt-parser=true, enabled=true
+https://ghproxy.com/https://raw.githubusercontent.com/blackmatrix7/ios_rule_script/master/rule/QuantumultX/Discord/Discord.list, tag=Discord, force-policy=通讯服务, update-interval=86400, opt-parser=true, enabled=true
+https://ghproxy.com/https://raw.githubusercontent.com/blackmatrix7/ios_rule_script/master/rule/QuantumultX/YouTube/YouTube.list, tag=YouTube, force-policy=油管视频, update-interval=86400, opt-parser=true, enabled=true
+https://ghproxy.com/https://raw.githubusercontent.com/blackmatrix7/ios_rule_script/master/rule/QuantumultX/Netflix/Netflix.list, tag=Netflix, force-policy=奈飞视频, update-interval=86400, opt-parser=true, enabled=true
+https://ghproxy.com/https://raw.githubusercontent.com/blackmatrix7/ios_rule_script/master/rule/QuantumultX/Bahamut/Bahamut.list, tag=Bahamut, force-policy=国外媒体, update-interval=86400, opt-parser=true, enabled=true
+https://ghproxy.com/https://raw.githubusercontent.com/blackmatrix7/ios_rule_script/master/rule/QuantumultX/GlobalMedia/GlobalMedia.list, tag=GlobalMedia, force-policy=国外媒体, update-interval=86400, opt-parser=true, enabled=true
+https://ghproxy.com/https://raw.githubusercontent.com/blackmatrix7/ios_rule_script/master/rule/QuantumultX/BiliBili/BiliBili.list, tag=Bilibili, force-policy=哔哩哔哩, update-interval=86400, opt-parser=true, enabled=true
+https://ghproxy.com/https://raw.githubusercontent.com/blackmatrix7/ios_rule_script/master/rule/QuantumultX/ChinaMedia/ChinaMedia.list, tag=国内媒体, force-policy=direct, update-interval=86400, opt-parser=true, enabled=true
+https://ghproxy.com/https://raw.githubusercontent.com/blackmatrix7/ios_rule_script/master/rule/QuantumultX/Developer/Developer.list, tag=Developer, force-policy=节点选择, update-interval=86400, opt-parser=true, enabled=true
+https://ghproxy.com/https://raw.githubusercontent.com/hope140/QuantumultX/beta/Proxy.list, tag=Proxy, force-policy=节点选择, update-interval=86400, opt-parser=true, enabled=true
+https://ghproxy.com/https://raw.githubusercontent.com/blackmatrix7/ios_rule_script/master/rule/QuantumultX/Download/Download.list, tag=Download, force-policy=全球直连, update-interval=86400, opt-parser=true, enabled=true
+https://ghproxy.com/https://raw.githubusercontent.com/blackmatrix7/ios_rule_script/master/rule/QuantumultX/Lan/Lan.list, tag=Lan, force-policy=全球直连, update-interval=86400, opt-parser=true, enabled=true
+https://ghproxy.com/https://raw.githubusercontent.com/hope140/QuantumultX/beta/Direct.list, tag=Direct, force-policy=全球直连, update-interval=86400, opt-parser=true, enabled=true
 
-;clash_rule_base=https://raw.githubusercontent.com/hope140/Clash/beta/GeneralClashConfig.yml
+[rewrite_remote]
+https://raw.githubusercontent.com/Orz-3/QuantumultX/master/TikTok.conf, tag=Tiktok解锁, update-interval=86400, opt-parser=false, enabled=true
+https://raw.githubusercontent.com/Orz-3/QuantumultX/master/YouTube.conf , tag=YouTube去广告, update-interval=86400, opt-parser=false, enabled=false
+https://raw.githubusercontent.com/Orz-3/QuantumultX/master/Bili_Auto_Regions.conf, tag=哔哩哔哩自动换区, update-interval=86400, opt-parser=false, enabled=false
+https://raw.githubusercontent.com/Orz-3/QuantumultX/master/JS.conf, tag=Script, update-interval=86400, opt-parser=false, enabled=false
+https://raw.githubusercontent.com/Orz-3/QuantumultX/master/JS_GetCookie.conf, tag=Cookie, update-interval=86400, opt-parser=false, enabled=false
+https://raw.githubusercontent.com/DivineEngine/Profiles/master/Quantumult/Rewrite/Block/Advertising.conf, tag=神机去广告, update-interval=86400, opt-parser=true, enabled=true
+https://raw.githubusercontent.com/NobyDa/Script/master/QuantumultX/Rewrite_lhie1.conf, tag=lhie1去广告, update-interval=86400, opt-parser=false, enabled=true
+https://raw.githubusercontent.com/DivineEngine/Profiles/master/Quantumult/Rewrite/General.conf, tag=神机重定向, update-interval=86400, opt-parser=false, enabled=true
+
+[server_local]
+
+
+
+[filter_local]
+host-suffix, local, direct
+ip-cidr, 192.168.0.0/16, direct
+ip-cidr, 10.0.0.0/8, direct
+ip-cidr, 172.16.0.0/12, direct
+ip-cidr, 127.0.0.0/8, direct
+ip-cidr, 100.64.0.0/10, direct
+ip-cidr, 224.0.0.0/4, direct
+ip6-cidr, fe80::/10, direct
+ip-cidr, 203.107.1.1/24, reject
+-geoip, cn, direct
+final, 漏网之鱼
+
+[rewrite_local]
+
+[task_local]
+
+
+[http_backend]
+https://raw.githubusercontent.com/chavyleung/scripts/master/chavy.box.js, host=boxjs.com, tag=BoxJS, path=^/, enabled=true
+
+[mitm]
+passphrase = A1C1426F
+p12 = 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
+skip_validating_cert = true
