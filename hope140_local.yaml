@@ -281,16 +281,16 @@ proxy-groups:
   - name: 🔍️ 谷歌服务
     type: select
     proxies:
-      - 🎯 全球直连
       - ✈️ 节点选择
+      - 🎯 全球直连
       - 🇺🇲 美国节点
       - 🚀 手动切换
 
   - name: 🐟 漏网之鱼
     type: select
     proxies:
-      - 🎯 全球直连
       - ♻️ 自动选择
+      - 🎯 全球直连
       - 🔯 故障转移
       - 🔮 负载均衡
       - 🚀 手动切换
@@ -339,12 +339,14 @@ proxy-groups:
     type: select
     proxies:
       - DIRECT
+      - REJECT  
 
   - name: 🛑 隐私拦截
     type: select
     proxies:
+      - REJECT  
       - DIRECT
-      - REJECT   
+ 
 
 
 # 分流规则订阅
