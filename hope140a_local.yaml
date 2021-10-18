@@ -314,11 +314,12 @@ proxy-groups:
     type: select
     proxies:
       - DIRECT
+      - REJECT
   - name: 🛑 隐私拦截
     type: select
     proxies:
-      - DIRECT
       - REJECT
+      - DIRECT
 rule-providers:
   WhiteList:
     type: http
