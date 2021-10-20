@@ -382,23 +382,25 @@ $_ENV['Clash_Pro_Profiles'] = [
             'redir-port'          => 7892,
             'allow-lan'           => false,
             'mode'                => 'rule',
-            'log-level'           => 'silent',
-            'external-controller' => '0.0.0.0:9090',
+            'log-level'           => 'info',
+            'external-controller' => '0.0.0.0:1443',
             'secret'              => ''
         ],
         'DNS' => [
             'enable'              => true,
-            'ipv6'                => false,
+            'ipv6'                => true,
             'listen'              => '0.0.0.0:53',
             'enhanced-mode'       => 'fake-ip',
             'fake-ip-range'       => '198.18.0.1/16',
             'nameserver'=>[
                 '114.114.114.114',
-                'tcp://223.5.5.5'
+                '223.5.5.5',
+                '223.6.6.6'
             ],
             'fallback'=>[
                 'tls://223.5.5.5:853',
-                'https://223.5.5.5/dns-query'
+                'https://223.5.5.5/dns-query',
+                '8.8.8.8'
             ],
             'fallback-filter'=>[
                 'geoip'=> true,

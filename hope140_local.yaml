@@ -4,23 +4,41 @@ allow-lan: true
 mode: Rule
 log-level: info
 external-controller: 0.0.0.0:1443
+experimental:
+  ignore-resolve-fail: true
 dns:
-  enable: true
-  listen: 0.0.0.0:53
-  enhanced-mode: fake-ip
-  fake-ip-range: 198.18.0.1/16   # if you don't know what it is, don't change it
-  use-hosts: true                # lookup hosts and return IP record
-  nameserver:
-    - 223.5.5.5                  # 阿里DNS
-    - 223.6.6.6                  # 随便填写你喜欢的DNS
-  fallback:                      # concurrent request with nameserver, 
-    - 8.8.8.8                    # google
-    - 1.1.1.1                    # cloudflare
-  fallback-filter: 
-    geoip: true                  # default    
-    ipcidr:                      # ips in these subnets will be considered polluted
-      - 240.0.0.0/4
-      
+ enable: false                  # set true to enable dns
+ ipv6: true                     # default is false
+ listen: 0.0.0.0:53
+ enhanced-mode: fake-ip         # or redir-host
+ fake-ip-range: 198.18.0.1/16   # if you don't know what it is, don't change it
+ use-hosts: true                # lookup hosts and return IP record
+ fake-ip-filter:                # fake ip white domain list, aka Always Real IP
+   - '*.lan'
+   - localhost.ptlogin2.qq.com
+   - "dns.msftncsi.com"
+   - "www.msftncsi.com"
+   - "www.msftconnecttest.com"
+ nameserver:
+   - 223.5.5.5                  # 阿里DNS
+   - 223.6.6.6               
+   - 180.76.76.76               # 百度DNS
+   - 119.29.29.29               # 腾讯DNS
+ fallback:                      # concurrent request with nameserver, 
+   - 8.8.8.8                    # google
+   - 1.1.1.1                    # cloudflare
+   - tls://1.0.0.1:853
+ fallback-filter: 
+   geoip: true                  # default    
+   ipcidr:                      # ips in these subnets will be considered polluted
+     - 240.0.0.0/4
+tun:
+ enable: false
+ stack: system                  # or gvisor
+ dns-hijack:
+   - 198.18.0.2:53
+ auto-route: true
+ auto-detect-interface: true     
 # interval代表间隔时间，单位为s
 # tolerance代表容差时间，单位为ms
 # 由于分流规则引用了Github文件，如果你的本地网络无法访问Github，你将无法让Clash正常工作。
