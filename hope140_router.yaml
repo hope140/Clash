@@ -365,12 +365,7 @@ proxy-groups:
       - DIRECT
 
 rule-providers:
-  WhiteList:
-    type: http
-    behavior: classical
-    path: ./RuleSet/WhiteList.yaml
-    url: https://ghproxy.com/https://raw.githubusercontent.com/blackmatrix7/ios_rule_script/master/rule/Clash/WhiteList/WhiteList.yaml
-    interval: 86400
+
   China:
     type: http
     behavior: classical
@@ -483,7 +478,7 @@ rule-providers:
     type: http
     behavior: classical
     path: ./RuleSet/NetEaseMusic.yaml
-    url: https://raw.githubusercontent.com/blackmatrix7/ios_rule_script/master/rule/Clash/NetEaseMusic/NetEaseMusic.yaml
+    url: https://ghproxy.com/https://raw.githubusercontent.com/blackmatrix7/ios_rule_script/master/rule/Clash/NetEaseMusic/NetEaseMusic.yaml
     interval: 86400
   ChinaMedia:
     type: http
@@ -528,7 +523,6 @@ rule-providers:
     url: https://ghproxy.com/https://raw.githubusercontent.com/hope140/Clash/beta/Direct.yaml
     interval: 86400
 rules:
-  - RULE-SET,WhiteList,🎯 全球直连
   - RULE-SET,Download,🎯 全球直连
   - RULE-SET,Lan,🎯 全球直连
   - RULE-SET,AdvertisingTest,🛑 隐私拦截
