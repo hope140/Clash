@@ -1,5 +1,3 @@
 proxies:
   - {name: 本地服务, server: 192.168.1.103, port: 2333, type: http, username: "", password: "", tls: false}
   - {name: 远程服务, server: 1.12.255.136, port: 2333, type: http, username: "", password: "", tls: false}
-  - {name: 测试服务1, server: 1.12.255.136, port: 2334, type: http, username: "", password: "", tls: false}
-  - {name: 测试服务2, server: 1.12.255.136, port: 2335, type: http, username: "", password: "", tls: false}
