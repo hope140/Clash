@@ -3,7 +3,7 @@
 # 基于blackmatrix7
 # 自用
 # 分组教全，无广告屏蔽
-
+ruleset=🎯 全球直连,https://proxy.hope140.tk/https://raw.githubusercontent.com/hope140/Clash/beta/Direct.list
 ruleset=🎯 全球直连,clash-classic:https://proxy.hope140.tk/https://raw.githubusercontent.com/blackmatrix7/ios_rule_script/master/rule/Clash/Download/Download.yaml
 ruleset=🎯 全球直连,clash-classic:https://proxy.hope140.tk/https://raw.githubusercontent.com/blackmatrix7/ios_rule_script/master/rule/Clash/Lan/Lan.yaml
 ;ruleset=🛑 隐私拦截,clash-classic:https://proxy.hope140.tk/https://raw.githubusercontent.com/blackmatrix7/ios_rule_script/master/rule/Clash/AdvertisingTest/AdvertisingTest.yaml
@@ -28,7 +28,6 @@ ruleset=🌏 国内媒体,clash-classic:https://proxy.hope140.tk/https://raw.git
 ruleset=✈️ 节点选择,clash-classic:https://proxy.hope140.tk/https://raw.githubusercontent.com/blackmatrix7/ios_rule_script/master/rule/Clash/Developer/Developer.yaml
 ruleset=✈️ 节点选择,https://proxy.hope140.tk/https://raw.githubusercontent.com/hope140/Clash/beta/Proxy.list
 ruleset=🎯 全球直连,clash-classic:https://proxy.hope140.tk/https://raw.githubusercontent.com/blackmatrix7/ios_rule_script/master/rule/Clash/China/China.yaml
-ruleset=🎯 全球直连,https://proxy.hope140.tk/https://raw.githubusercontent.com/hope140/Clash/beta/Direct.list
 ruleset=🎯 全球直连,[]GEOIP,CN
 ruleset=🐟 漏网之鱼,[]FINAL
 
