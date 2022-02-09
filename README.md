@@ -24,3 +24,5 @@
 本地配置推荐有一定基础的小伙伴使用，仅供参考，并不包含全部写法
 
 有兴趣的小伙伴可于[这里](https://github.com/Dreamacro/clash/wiki)自行摸索
+
+也欢迎来我的[群组](https://t.me/hope140_chat)中讨论，我们一起探讨~
