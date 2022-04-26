@@ -28,22 +28,22 @@ dns:
     - '*.alipayobjects.com'
   nameserver:
       - 223.5.5.5                  # 阿里DNS
-      - 223.6.6.6               
+      - 223.6.6.6
       - 180.76.76.76               # 百度DNS
       - 119.29.29.29               # 腾讯DNS
-  fallback:                      # concurrent request with nameserver, 
+  fallback:                      # concurrent request with nameserver,
       - 8.8.8.8                    # google
       - 1.1.1.1                    # cloudflare
       - tls://1.0.0.1:853
       - https://dns.adguard.com/dns-query
-  fallback-filter: 
+  fallback-filter:
     geoip: true                  # default
-    geoip-code: CN    
+    geoip-code: CN
     ipcidr:                      # ips in these subnets will be considered polluted
       - 240.0.0.0/4
-    domain: 
-      - '+.google.com' 
-      - '+.facebook.com' 
+    domain:
+      - '+.google.com'
+      - '+.facebook.com'
       - '+.youtube.com'
 tun:
   enable: false
@@ -51,11 +51,11 @@ tun:
   dns-hijack:
     - 198.18.0.2:53 # 请勿更改
   auto-route: true
-  auto-detect-interface: true # 自动检测出口网卡  
+  auto-detect-interface: true # 自动检测出口网卡
 # interval代表间隔时间，单位为s
 # tolerance代表容差时间，单位为ms
 # 由于分流规则引用了Github文件，如果你的本地网络无法访问Github，你将无法让Clash正常工作。
-# 你需要先使用翻墙工具让本地网络出墙，再启动Clash才能正常下载分流规则并正常启动，待Clahs启动成功并更新完订阅资源和分流规则之后，方可关闭你之前打开的翻墙工具。
+# 你需要先使用翻墙工具让本地网络出墙，再启动Clash才能正常下载分流规则并正常启动，待Clash启动成功并更新完订阅资源和分流规则之后，方可关闭你之前打开的翻墙工具。
 # 请使用节点订阅转换服务将服务商的订阅链接转换为Clash的订阅，并输出为Node List格式。
 # 请使用节点订阅转换工具提供的保留节点和过滤节点功能，生成不同地区的订阅链接，并填入下方proxy-providers区域。
 # 其他内容具体见注释。
@@ -160,7 +160,7 @@ proxy-providers:
     health-check:
       enable: true
       url: http://www.gstatic.com/generate_204
-      interval: 300      
+      interval: 300
 # 节点组
 # 默认每分钟测试一次节点延时
 # 容差参数未开启时默认为0ms
@@ -241,7 +241,7 @@ proxy-groups:
       - 🇯🇵 日本节点
       - 🇺🇲 美国节点
       - 🇰🇷 韩国节点
-      - 🚀 手动切换   
+      - 🚀 手动切换
 
   - name: 🌍 国外媒体
     type: select
@@ -259,29 +259,29 @@ proxy-groups:
 #    type: fallback
 #    proxies:
 #      - 🎯 全球直连
-#      - 🎵 网抑节点     
+#      - 🎵 网抑节点
 
   - name: 🌏 国内媒体
     type: select
     proxies:
       - 🎯 全球直连
       - ✈️ 节点选择
-      - 🚀 手动切换   
+      - 🚀 手动切换
 
   - name: 📺 哔哩哔哩
     type: select
     proxies:
       - 🎯 全球直连
       - 🇭🇰 香港节点
-      - 🇨🇳 台湾节点 
-      
+      - 🇨🇳 台湾节点
+
   - name: 🎮 游戏平台
     type: select
     proxies:
       - 🎯 全球直连
       - 🎲 游戏节点
       - ✈️ 节点选择
-      - 🚀 手动切换       
+      - 🚀 手动切换
 
   - name: Ⓜ️ 微软云盘
     type: select
@@ -289,7 +289,7 @@ proxy-groups:
       - 🎯 全球直连
       - ✈️ 节点选择
       - 🇺🇲 美国节点
-      - 🚀 手动切换  
+      - 🚀 手动切换
 
   - name: ⌨️ 微软服务
     type: select
@@ -297,7 +297,7 @@ proxy-groups:
       - 🎯 全球直连
       - ✈️ 节点选择
       - 🇺🇲 美国节点
-      - 🚀 手动切换 
+      - 🚀 手动切换
 
   - name: 🍎 苹果服务
     type: select
@@ -370,14 +370,14 @@ proxy-groups:
     type: select
     proxies:
       - DIRECT
-      - REJECT  
+      - REJECT
 
   - name: 🛑 隐私拦截
     type: select
     proxies:
-      - REJECT  
+      - REJECT
       - DIRECT
- 
+
 
 
 # 分流规则订阅
@@ -432,7 +432,7 @@ rule-providers:
     behavior: classical
     path: ./RuleSet/Github.yaml
     url: https://proxy.hope140.tk/https://raw.githubusercontent.com/blackmatrix7/ios_rule_script/master/rule/Clash/Github/Github.yaml
-    interval: 86400  
+    interval: 86400
 
   Apple:
     type: http
@@ -530,35 +530,35 @@ rule-providers:
     behavior: classical
     path: ./RuleSet/Developer.yaml
     url: https://proxy.hope140.tk/https://raw.githubusercontent.com/blackmatrix7/ios_rule_script/master/rule/Clash/Developer/Developer.yaml
-    interval: 86400           
+    interval: 86400
 
   Proxy:
     type: http
     behavior: classical
     path: ./RuleSet/Proxy.yaml
     url: https://proxy.hope140.tk/https://raw.githubusercontent.com/hope140/Clash/beta/Proxy.yaml
-    interval: 86400         
+    interval: 86400
 
   Download:
     type: http
     behavior: classical
     path: ./RuleSet/Download.yaml
     url: https://proxy.hope140.tk/https://raw.githubusercontent.com/blackmatrix7/ios_rule_script/master/rule/Clash/Download/Download.yaml
-    interval: 86400    
+    interval: 86400
 
   Lan:
     type: http
     behavior: classical
     path: ./RuleSet/Lan.yaml
     url: https://proxy.hope140.tk/https://raw.githubusercontent.com/blackmatrix7/ios_rule_script/master/rule/Clash/Lan/Lan.yaml
-    interval: 86400    
+    interval: 86400
 
   Direct:
     type: http
     behavior: classical
     path: ./RuleSet/Direct.yaml
     url: https://proxy.hope140.tk/https://raw.githubusercontent.com/hope140/Clash/beta/Direct.yaml
-    interval: 86400    
+    interval: 86400
 
 
 
@@ -577,7 +577,7 @@ rules:
   - RULE-SET,Epic,🎮 游戏平台
   - RULE-SET,Battle,🎮 游戏平台
   - RULE-SET,Steam,🎮 游戏平台
-  - RULE-SET,EA,🎮 游戏平台  
+  - RULE-SET,EA,🎮 游戏平台
   - RULE-SET,YouTube,📹 油管视频
   - RULE-SET,Netflix,💻 奈飞视频
   - RULE-SET,Bahamut,🌍 国外媒体

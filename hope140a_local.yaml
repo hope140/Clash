@@ -28,22 +28,22 @@ dns:
     - '*.alipayobjects.com'
   nameserver:
       - 223.5.5.5                  # 阿里DNS
-      - 223.6.6.6               
+      - 223.6.6.6
       - 180.76.76.76               # 百度DNS
       - 119.29.29.29               # 腾讯DNS
-  fallback:                      # concurrent request with nameserver, 
+  fallback:                      # concurrent request with nameserver,
       - 8.8.8.8                    # google
       - 1.1.1.1                    # cloudflare
       - tls://1.0.0.1:853
       - https://dns.adguard.com/dns-query
-  fallback-filter: 
+  fallback-filter:
     geoip: true                  # default
-    geoip-code: CN    
+    geoip-code: CN
     ipcidr:                      # ips in these subnets will be considered polluted
       - 240.0.0.0/4
-    domain: 
-      - '+.google.com' 
-      - '+.facebook.com' 
+    domain:
+      - '+.google.com'
+      - '+.facebook.com'
       - '+.youtube.com'
 tun:
   enable: false
@@ -51,12 +51,12 @@ tun:
   dns-hijack:
     - 198.18.0.2:53 # 请勿更改
   auto-route: true
-  auto-detect-interface: true # 自动检测出口网卡 
-      
+  auto-detect-interface: true # 自动检测出口网卡
+
 # interval代表间隔时间，单位为s
 # tolerance代表容差时间，单位为ms
 # 由于分流规则引用了Github文件，如果你的本地网络无法访问Github，你将无法让Clash正常工作。
-# 你需要先使用翻墙工具让本地网络出墙，再启动Clash才能正常下载分流规则并正常启动，待Clahs启动成功并更新完订阅资源和分流规则之后，方可关闭你之前打开的翻墙工具。
+# 你需要先使用翻墙工具让本地网络出墙，再启动Clash才能正常下载分流规则并正常启动，待Clash启动成功并更新完订阅资源和分流规则之后，方可关闭你之前打开的翻墙工具。
 # 请使用节点订阅转换服务将服务商的订阅链接转换为Clash的订阅，并输出为Node List格式。
 # 请使用节点订阅转换工具提供的保留节点和过滤节点功能，生成不同地区的订阅链接，并填入下方proxy-providers区域。
 # 其他内容具体见注释。
@@ -173,7 +173,7 @@ proxy-providers:
     health-check:
       enable: true
       url: http://www.gstatic.com/generate_204
-      interval: 300    
+      interval: 300
   其他节点:
     type: http
     path: ./Proxy/其他节点.yml
@@ -182,8 +182,8 @@ proxy-providers:
     health-check:
       enable: true
       url: http://www.gstatic.com/generate_204
-      interval: 300     
-      
+      interval: 300
+
 proxy-groups:
   - name: ✈️ 节点选择
     type: select
@@ -304,7 +304,7 @@ proxy-groups:
     interval: 300
     tolerance: 50
     proxies:
-      - 🎵 音乐节点 
+      - 🎵 音乐节点
       - 🎯 全球直连
   - name: 🔍️ 谷歌服务
     type: select
@@ -329,13 +329,13 @@ proxy-groups:
     url: http://www.gstatic.com/generate_204
     interval: 300
     tolerance: 50
-    use: 
+    use:
       - emby
   - name: 🎲 游戏节点
     type: select
     use:
       - 游戏节点
-  - name: 🎵 音乐节点 
+  - name: 🎵 音乐节点
     type: url-test
     url: http://music.163.com/api
     interval: 300
@@ -363,13 +363,13 @@ proxy-groups:
   - name: 🇸🇬 狮城节点
     type: fallback
     use:
-      - 狮城节点    
+      - 狮城节点
     url: http://www.gstatic.com/generate_204
     interval: 600
   - name: 🇰🇷 韩国节点
     type: fallback
     use:
-      - 韩国节点    
+      - 韩国节点
     url: http://www.gstatic.com/generate_204
     interval: 600
   - name: 🎯 全球直连
@@ -447,7 +447,7 @@ rule-providers:
     behavior: classical
     path: ./RuleSet/Discord.yaml
     url: https://proxy.hope140.tk/https://raw.githubusercontent.com/blackmatrix7/ios_rule_script/master/rule/Clash/Discord/Discord.yaml
-    interval: 86400 
+    interval: 86400
   Game:
     type: http
     behavior: classical
