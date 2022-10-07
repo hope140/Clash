@@ -389,175 +389,175 @@ rule-providers:
     type: http
     behavior: classical
     path: ./RuleSet/China.yaml
-    url: https://proxy.hope140.tk/https://raw.githubusercontent.com/blackmatrix7/ios_rule_script/master/rule/Clash/China/China.yaml
+    url: https://proxy.hope140.gq/https://raw.githubusercontent.com/blackmatrix7/ios_rule_script/master/rule/Clash/China/China.yaml
     interval: 86400
 
   AdvertisingTest:
     type: http
     behavior: classical
     path: ./RuleSet/AdvertisingTest.yaml
-    url: https://proxy.hope140.tk/https://raw.githubusercontent.com/blackmatrix7/ios_rule_script/master/rule/Clash/AdvertisingTest/AdvertisingTest.yaml
+    url: https://proxy.hope140.gq/https://raw.githubusercontent.com/blackmatrix7/ios_rule_script/master/rule/Clash/AdvertisingTest/AdvertisingTest.yaml
     interval: 86400
 
   Google:
     type: http
     behavior: classical
     path: ./RuleSet/Google.yaml
-    url: https://proxy.hope140.tk/https://raw.githubusercontent.com/blackmatrix7/ios_rule_script/master/rule/Clash/Google/Google.yaml
+    url: https://proxy.hope140.gq/https://raw.githubusercontent.com/blackmatrix7/ios_rule_script/master/rule/Clash/Google/Google.yaml
     interval: 86400
 
   GoogleDrive:
     type: http
     behavior: classical
     path: ./RuleSet/GoogleDrive.yaml
-    url: https://proxy.hope140.tk/https://raw.githubusercontent.com/blackmatrix7/ios_rule_script/master/rule/Clash/GoogleDrive/GoogleDrive.yaml
+    url: https://proxy.hope140.gq/https://raw.githubusercontent.com/blackmatrix7/ios_rule_script/master/rule/Clash/GoogleDrive/GoogleDrive.yaml
     interval: 86400
 
   OneDrive:
     type: http
     behavior: classical
     path: ./RuleSet/OneDrive.yaml
-    url: https://proxy.hope140.tk/https://raw.githubusercontent.com/blackmatrix7/ios_rule_script/master/rule/Clash/OneDrive/OneDrive.yaml
+    url: https://proxy.hope140.gq/https://raw.githubusercontent.com/blackmatrix7/ios_rule_script/master/rule/Clash/OneDrive/OneDrive.yaml
     interval: 86400
 
   Microsoft:
     type: http
     behavior: classical
     path: ./RuleSet/Microsoft.yaml
-    url: https://proxy.hope140.tk/https://raw.githubusercontent.com/blackmatrix7/ios_rule_script/master/rule/Clash/Microsoft/Microsoft.yaml
+    url: https://proxy.hope140.gq/https://raw.githubusercontent.com/blackmatrix7/ios_rule_script/master/rule/Clash/Microsoft/Microsoft.yaml
     interval: 86400
 
   Github:
     type: http
     behavior: classical
     path: ./RuleSet/Github.yaml
-    url: https://proxy.hope140.tk/https://raw.githubusercontent.com/blackmatrix7/ios_rule_script/master/rule/Clash/Github/Github.yaml
+    url: https://proxy.hope140.gq/https://raw.githubusercontent.com/blackmatrix7/ios_rule_script/master/rule/Clash/Github/Github.yaml
     interval: 86400
 
   Apple:
     type: http
     behavior: classical
     path: ./RuleSet/Apple.yaml
-    url: https://proxy.hope140.tk/https://raw.githubusercontent.com/blackmatrix7/ios_rule_script/master/rule/Clash/Apple/Apple.yaml
+    url: https://proxy.hope140.gq/https://raw.githubusercontent.com/blackmatrix7/ios_rule_script/master/rule/Clash/Apple/Apple.yaml
     interval: 86400
 
   Telegram:
     type: http
     behavior: classical
     path: ./RuleSet/Telegram.yaml
-    url: https://proxy.hope140.tk/https://raw.githubusercontent.com/blackmatrix7/ios_rule_script/master/rule/Clash/Telegram/Telegram.yaml
+    url: https://proxy.hope140.gq/https://raw.githubusercontent.com/blackmatrix7/ios_rule_script/master/rule/Clash/Telegram/Telegram.yaml
     interval: 86400
 
   Epic:
     type: http
     behavior: classical
     path: ./RuleSet/Epic.yaml
-    url: https://proxy.hope140.tk/https://raw.githubusercontent.com/blackmatrix7/ios_rule_script/master/rule/Clash/Epic/Epic.yaml
+    url: https://proxy.hope140.gq/https://raw.githubusercontent.com/blackmatrix7/ios_rule_script/master/rule/Clash/Epic/Epic.yaml
     interval: 86400
 
   Battle:
     type: http
     behavior: classical
     path: ./RuleSet/Battle.yaml
-    url: https://proxy.hope140.tk/https://raw.githubusercontent.com/blackmatrix7/ios_rule_script/master/rule/Clash/Battle/Battle.yaml
+    url: https://proxy.hope140.gq/https://raw.githubusercontent.com/blackmatrix7/ios_rule_script/master/rule/Clash/Battle/Battle.yaml
     interval: 86400
 
   Steam:
     type: http
     behavior: classical
     path: ./RuleSet/Steam.yaml
-    url: https://proxy.hope140.tk/https://raw.githubusercontent.com/blackmatrix7/ios_rule_script/master/rule/Clash/Steam/Steam.yaml
+    url: https://proxy.hope140.gq/https://raw.githubusercontent.com/blackmatrix7/ios_rule_script/master/rule/Clash/Steam/Steam.yaml
     interval: 86400
 
   EA:
     type: http
     behavior: classical
     path: ./RuleSet/EA.yaml
-    url: https://proxy.hope140.tk/https://raw.githubusercontent.com/blackmatrix7/ios_rule_script/master/rule/Clash/EA/EA.yaml
+    url: https://proxy.hope140.gq/https://raw.githubusercontent.com/blackmatrix7/ios_rule_script/master/rule/Clash/EA/EA.yaml
     interval: 86400
 
   YouTube:
     type: http
     behavior: classical
     path: ./RuleSet/YouTube.yaml
-    url: https://proxy.hope140.tk/https://raw.githubusercontent.com/blackmatrix7/ios_rule_script/master/rule/Clash/YouTube/YouTube.yaml
+    url: https://proxy.hope140.gq/https://raw.githubusercontent.com/blackmatrix7/ios_rule_script/master/rule/Clash/YouTube/YouTube.yaml
     interval: 86400
 
   Netflix:
     type: http
     behavior: classical
     path: ./RuleSet/Netflix.yaml
-    url: https://proxy.hope140.tk/https://raw.githubusercontent.com/blackmatrix7/ios_rule_script/master/rule/Clash/Netflix/Netflix.yaml
+    url: https://proxy.hope140.gq/https://raw.githubusercontent.com/blackmatrix7/ios_rule_script/master/rule/Clash/Netflix/Netflix.yaml
     interval: 86400
 
   Bahamut:
     type: http
     behavior: classical
     path: ./RuleSet/Bahamut.yaml
-    url: https://proxy.hope140.tk/https://raw.githubusercontent.com/blackmatrix7/ios_rule_script/master/rule/Clash/Bahamut/Bahamut.yaml
+    url: https://proxy.hope140.gq/https://raw.githubusercontent.com/blackmatrix7/ios_rule_script/master/rule/Clash/Bahamut/Bahamut.yaml
     interval: 86400
 
   GlobalMedia:
     type: http
     behavior: classical
     path: ./RuleSet/GlobalMedia.yaml
-    url: https://proxy.hope140.tk/https://raw.githubusercontent.com/blackmatrix7/ios_rule_script/master/rule/Clash/GlobalMedia/GlobalMedia.yaml
+    url: https://proxy.hope140.gq/https://raw.githubusercontent.com/blackmatrix7/ios_rule_script/master/rule/Clash/GlobalMedia/GlobalMedia.yaml
     interval: 86400
 
   Bilibili:
     type: http
     behavior: classical
     path: ./RuleSet/Bilibili.yaml
-    url: https://proxy.hope140.tk/https://raw.githubusercontent.com/blackmatrix7/ios_rule_script/master/rule/Clash/BiliBili/BiliBili.yaml
+    url: https://proxy.hope140.gq/https://raw.githubusercontent.com/blackmatrix7/ios_rule_script/master/rule/Clash/BiliBili/BiliBili.yaml
     interval: 86400
 
 #  NetEaseMusic:
 #    type: http
 #    behavior: classical
 #    path: ./RuleSet/NetEaseMusic.yaml
-#    url: https://proxy.hope140.tk/https://raw.githubusercontent.com/blackmatrix7/ios_rule_script/master/rule/Clash/NetEaseMusic/NetEaseMusic.yaml
+#    url: https://proxy.hope140.gq/https://raw.githubusercontent.com/blackmatrix7/ios_rule_script/master/rule/Clash/NetEaseMusic/NetEaseMusic.yaml
 #    interval: 86400
 
   ChinaMedia:
     type: http
     behavior: classical
     path: ./RuleSet/ChinaMedia.yaml
-    url: https://proxy.hope140.tk/https://raw.githubusercontent.com/blackmatrix7/ios_rule_script/master/rule/Clash/ChinaMedia/ChinaMedia.yaml
+    url: https://proxy.hope140.gq/https://raw.githubusercontent.com/blackmatrix7/ios_rule_script/master/rule/Clash/ChinaMedia/ChinaMedia.yaml
     interval: 86400
 
   Developer:
     type: http
     behavior: classical
     path: ./RuleSet/Developer.yaml
-    url: https://proxy.hope140.tk/https://raw.githubusercontent.com/blackmatrix7/ios_rule_script/master/rule/Clash/Developer/Developer.yaml
+    url: https://proxy.hope140.gq/https://raw.githubusercontent.com/blackmatrix7/ios_rule_script/master/rule/Clash/Developer/Developer.yaml
     interval: 86400
 
   Proxy:
     type: http
     behavior: classical
     path: ./RuleSet/Proxy.yaml
-    url: https://proxy.hope140.tk/https://raw.githubusercontent.com/hope140/Clash/beta/Proxy.yaml
+    url: https://proxy.hope140.gq/https://raw.githubusercontent.com/hope140/Clash/beta/Proxy.yaml
     interval: 86400
 
   Download:
     type: http
     behavior: classical
     path: ./RuleSet/Download.yaml
-    url: https://proxy.hope140.tk/https://raw.githubusercontent.com/blackmatrix7/ios_rule_script/master/rule/Clash/Download/Download.yaml
+    url: https://proxy.hope140.gq/https://raw.githubusercontent.com/blackmatrix7/ios_rule_script/master/rule/Clash/Download/Download.yaml
     interval: 86400
 
   Lan:
     type: http
     behavior: classical
     path: ./RuleSet/Lan.yaml
-    url: https://proxy.hope140.tk/https://raw.githubusercontent.com/blackmatrix7/ios_rule_script/master/rule/Clash/Lan/Lan.yaml
+    url: https://proxy.hope140.gq/https://raw.githubusercontent.com/blackmatrix7/ios_rule_script/master/rule/Clash/Lan/Lan.yaml
     interval: 86400
 
   Direct:
     type: http
     behavior: classical
     path: ./RuleSet/Direct.yaml
-    url: https://proxy.hope140.tk/https://raw.githubusercontent.com/hope140/Clash/beta/Direct.yaml
+    url: https://proxy.hope140.gq/https://raw.githubusercontent.com/hope140/Clash/beta/Direct.yaml
     interval: 86400
 
 
